@@ -42,7 +42,10 @@ const createWindow = () => {
             { label:'Google', click: function() {mainWindow.loadURL("http://google.com/");} },
             { label:'Yahoo', click: function() {mainWindow.loadURL("http://yahoo.co.jp/");} },
             { label:'Bing', click: function() {mainWindow.loadURL("http://bing.com/");} },
-            { label:'GoogleMap', click: function() {mainWindow.loadURL("http://google.co.jp/maps");} }
+            { type:'separator' },
+            { label:'GoogleMap', click: function() {mainWindow.loadURL("http://google.co.jp/maps");} },
+            { label:'Discord', click: function() {mainWindow.loadURL("http://discord.com/app");} },
+            { label:'GitHub', click: function() {mainWindow.loadURL("http://github.com");} }
           ]
         },
         {
