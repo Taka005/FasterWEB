@@ -5,8 +5,8 @@ const openAboutWindow = require("about-window").default;
 const createWindow = () => {
     const mainWindow = new BrowserWindow({
         "title": "webclient",
-        "width": 1000,
-        "height": 800,
+        "width": 1300,
+        "height": 1000,
         "icon": "icon.png",
         "autoHideMenuBar": false,
         "webPreferences": {
@@ -25,12 +25,38 @@ const createWindow = () => {
           ]
         },
         {
-            label: "表示",
-            submenu: [
-              { role:'togglefullscreen',   label:'フルスクリーン' },
-              { role:'minimize',  label:'最小化' }
-            ]
-          }
+          label: "表示",
+          submenu: [
+            { role:'togglefullscreen',   label:'フルスクリーン' },
+            { role:'minimize',  label:'最小化' },
+            { type:'separator' },
+            { role:'zoomin',  label:'拡大' },
+            { role:'zoomout',  label:'縮小' },
+            { role:'resetzoom',  label:'解除' },
+    
+          ]
+        },
+        {
+          label: "検索",
+          submenu: [
+            { label:'Google', click: function() {mainWindow.loadURL("http://google.com/");} },
+            { label:'Yahoo', click: function() {mainWindow.loadURL("http://yahoo.co.jp/");} },
+            { label:'Bing', click: function() {mainWindow.loadURL("http://bing.com/");} },
+            { label:'GoogleMap', click: function() {mainWindow.loadURL("http://google.co.jp/maps");} }
+          ]
+        },
+        {
+          label: "開発",
+          submenu: [
+            { label:'DevTools',role:'toggledevtools'}
+          ]
+        },
+        {
+          label: "ヘルプ",
+          submenu: [
+            { label:'Discord', click: function() {mainWindow.loadURL("https://discord.gg/GPs3npB63m");} }
+          ]
+        }
     ]));
 
     mainWindow.loadURL("http://google.com");
